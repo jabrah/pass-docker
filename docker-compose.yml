@@ -46,6 +46,21 @@ services:
     networks:
       - back
 
+  static-html:
+    build:
+      context: ./static-html
+      args:
+        STATIC_HTML_GIT_REPO: "${STATIC_HTML_GIT_REPO}"
+        STATIC_HTML_GIT_BRANCH: "${STATIC_HTML_GIT_BRANCH}"
+    image: oapass/static-html:20180622-4af4140@sha256:544d8a9d5c6164f39b3dfc16917b979a51a5e580630cf41528e53d0163d7eac1
+    container_name: static-html
+    env_file: .env
+    ports:
+      - "${STATIC_HTML_PORT}:${STATIC_HTML_PORT}"
+    networks:
+      - back
+      - front
+
   ftpserver:
     build: ./ftpserver/0.0.1-demo
     image: oapass/ftpserver@sha256:145f7e3bb494deeb1e1c587f34f0f54649f22d6ef0c107bacd022b0308146ddb
@@ -59,7 +74,7 @@ services:
 
   proxy:
     build: ./httpd-proxy/
-    image: oapass/httpd-proxy:20180618@sha256:fff8cff84a4821d52156c38d82d45910f4937806b857ece35571ea064665e92c
+    image: oapass/httpd-proxy:20180622@sha256:423b358d177cb903316b1449ed2d25357137e85a9b3f4d270e30e56354c54c0e
     container_name: proxy
     networks:
      - front
