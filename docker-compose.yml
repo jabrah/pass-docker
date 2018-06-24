@@ -40,7 +40,7 @@ services:
       args:
         EMBER_GIT_REPO: "${EMBER_GIT_REPO}"
         EMBER_GIT_BRANCH: "${EMBER_GIT_BRANCH}"
-    image: oapass/ember:20180624-799e9e7-jabrah@sha256:2d93bf0f9fba9a05b715b7d8ed4727e4b8c44a65187b33b104d7a549e7bfcc44
+    image: oapass/ember:20180623-876e097@sha256:1f86e57fa1b888d01eee8483d1045f232e84d0787c04582b2591a592bb042aa5
     container_name: ember
     env_file: .env
     networks:
@@ -52,7 +52,7 @@ services:
       args:
         STATIC_HTML_GIT_REPO: "${STATIC_HTML_GIT_REPO}"
         STATIC_HTML_GIT_BRANCH: "${STATIC_HTML_GIT_BRANCH}"
-    image: oapass/static-html:20180622-jabrah-6185bc5@sha256:740974da027fe74f051f1abc58318e089536d85fc63589d2fff4f51229951100
+    image: oapass/static-html:20180624-karenhanson-c55d8a2@sha256:fd6767c46310c265c05d64c0846e8da4e7eda2c726498cdf38881b857846bb00
     container_name: static-html
     env_file: .env
     ports:
