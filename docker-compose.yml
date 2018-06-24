@@ -52,7 +52,7 @@ services:
       args:
         STATIC_HTML_GIT_REPO: "${STATIC_HTML_GIT_REPO}"
         STATIC_HTML_GIT_BRANCH: "${STATIC_HTML_GIT_BRANCH}"
-    image: oapass/static-html:20180624-karenhanson-c55d8a2@sha256:fd6767c46310c265c05d64c0846e8da4e7eda2c726498cdf38881b857846bb00
+    image: oapass/static-html:20180624-karenhanson-c20926e@sha256:e6e7e73eea2dfa0b22dc1c7f30437e4ca700eb52ab8f19e8a568f5fe8b3c91e3
     container_name: static-html
     env_file: .env
     ports:
