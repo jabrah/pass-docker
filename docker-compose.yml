@@ -133,7 +133,7 @@ services:
 
   dspace:
     build: ./dspace/6.2
-    image: oapass/dspace:20200419
+    image: oapass/dspace:20200419@sha256:99df12f10846f2a2d62058cf4eef631393d7949a343b233a9e487d54fd82a483
     container_name: dspace
     env_file: .env
     ports:
