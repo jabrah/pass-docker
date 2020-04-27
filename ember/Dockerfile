@@ -1,4 +1,4 @@
-FROM alpine:3.7 as ember-builder
+FROM node:10.20.1-alpine3.11 as ember-builder
 
 ARG EMBER_GIT_REPO
 ARG EMBER_GIT_BRANCH
@@ -23,16 +23,18 @@ ENV EMBER_GIT_BRANCH=${EMBER_GIT_BRANCH:-master} \
     EMBER_ROOT_URL=${EMBER_ROOT_URL:-/app/} \
     METADATA_SCHEMA_URI=${METADATA_SCHEMA_URI:-https://oa-pass.github.com/metadata-schemas/jhu/global.json}
 
-RUN apk add --no-cache nodejs-npm git && \
+RUN apk add --no-cache git && \
+    node -v && npm -v && yarn -v && \
     mkdir -p ${EMBER_BUILD_DIR} && \
     cd ${EMBER_BUILD_DIR} && \
     git clone ${EMBER_GIT_REPO} . && \
     git checkout ${EMBER_GIT_BRANCH} && \
-    npm install && \
-    npm install -g ember-cli && \
+    yarn global add ember-cli && \
+    yarn install && \
     echo "Build environment: " && \
     env | sort && \
-    ember build --environment=production
+    yarn run build --environment=production && \
+    yarn cache clean
 
 FROM nginx:1.13.12-alpine
 
