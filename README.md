@@ -109,6 +109,7 @@ The following can be set to change log levels in pass-authz-lister. These variab
 - DSPACE_USERNAME: SWORD DSpace username
 - DSPACE_PASSWORD: SWORD DSpace password
 - DSPACE_COLLECTION_HANDLE:  Handle of the collection to deposit into (default: `123456789/2`)
+- DSPACE_COVID_HANDLE: Handle of the collection to deposit COVID-19 related submissions to (default: `123456789/4`)
 - DSPACE_SUBMITTER_USERNAME: SWORD DSpace username who is allowed to submit to the collection identified by `DSPACE_COLLECTION_WORKFLOW_HANDLE`
 - DSPACE_SUBMITTER_PASSWORD: Password for the user identified by `DSPACE_SUBMITTER_USERNAME`
 - DSPACE_COLLECTION_WORKFLOW_HANDLE: Handle of the collection which has workflows enabled.  Deposits to this collection must be approved by the DSpace administrator before they are accepted into the DSpace archive.
