@@ -21,7 +21,9 @@ ENV EMBER_GIT_BRANCH=${EMBER_GIT_BRANCH:-master} \
     DOI_SERVICE_URL=${DOI_SERVICE_URL:-/doiservice/journal} \
     POLICY_SERVICE_URL=${POLICY_SERVICE_URL:-/policies} \
     EMBER_ROOT_URL=${EMBER_ROOT_URL:-/app/} \
-    METADATA_SCHEMA_URI=${METADATA_SCHEMA_URI:-https://oa-pass.github.com/metadata-schemas/jhu/global.json}
+    METADATA_SCHEMA_URI=${METADATA_SCHEMA_URI:-https://oa-pass.github.com/metadata-schemas/jhu/global.json} \
+    MANUSCRIPT_SERVICE_LOOKUP_URL=${MANUSCRIPT_SERVICE_LOOKUP_URL:-/downloadservice/lookup} \
+    MANUSCRIPT_SERVICE_DOWNLOAD_URL=${MANUSCRIPT_SERVICE_DOWNLOAD_URL:-/downloadservice/download}
 
 RUN apk add --no-cache git && \
     node -v && npm -v && yarn -v && \
