@@ -43,7 +43,7 @@ It is important to note that the Ember application does not actually read enviro
   - METADATA_SCHEMA_URI: URL to the metadata global schema. Gets added to metadata blob (default: `https://oa-pass.github.io/metadata-schemas/jhu/global.json`)
   - STATIC_CONFIG_URI: The relative URI of the static branding configuration file. This is important to allow the Ember app to be able to retrieve branding stylesheets, images, and other static assets. (_default: `/config.json`_)
   - MANUSCRIPT_SERVICE_LOOKUP_URL: the endpoint for looking up manuscripts by DOI (default: `/downloadservice/lookup`)
-- MANUSCRIPT_SERVICE_DOWNLOAD_URL: the endpoint for downloading selected manuscripts into fedora (default: `/downloadservice/download`)
+  - MANUSCRIPT_SERVICE_DOWNLOAD_URL: the endpoint for downloading selected manuscripts into fedora (default: `/downloadservice/download`)
 
 
 ### Fedora-related variables
@@ -157,7 +157,7 @@ In addition we need PASS_EXTERNAL_FEDORA_BASEURL to be present to translate inte
 ### Download service variables
 
 - DOWNLOAD_SERVICE_PORT: Port to serve the download service on (default: `6502`)
-- DOWNLOAD_SERVICE_DEST: Fedora container URI where binaries will be downloaded into
+- DOWNLOAD_SERVICE_DEST: Fedora container URI where binaries will be downloaded into (default: http://fcrepo:8080/fcrepo/rest/files) 
 - UNPAYWALL_REQUEST_EMAIL: E-mail address that will be sent with unpaywall requests (can be any validly formatted email address, e.g. admin@oa-pass.org)
 - UNPAYWALL_BASEURI: BaseURL of the unpaywall service (e.g. https://api.unpaywall.org/v2).
 - PASS_EXTERNAL_FEDORA_BASEURL:  External (public) PASS baseurl (e.g. https://pass.local/fcrepo/rest/, _note_ the trailing slash is necessary)
